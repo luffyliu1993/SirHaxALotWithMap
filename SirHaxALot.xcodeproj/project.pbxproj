@@ -15,6 +15,15 @@
 		30C01FCF1E282DBA00C30BC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C01FCD1E282DBA00C30BC7 /* LaunchScreen.storyboard */; };
 		30C01FDA1E282DBA00C30BC7 /* SirHaxALotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C01FD91E282DBA00C30BC7 /* SirHaxALotTests.swift */; };
 		30C01FE51E282DBA00C30BC7 /* SirHaxALotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C01FE41E282DBA00C30BC7 /* SirHaxALotUITests.swift */; };
+		857C60F81E3287EC00A07953 /* HackthonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C60F71E3287EC00A07953 /* HackthonViewController.swift */; };
+		CA59E8D31E319E67006AAD7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59E8D21E319E67006AAD7A /* HomeViewController.swift */; };
+		CA59E8D51E319F6B006AAD7A /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59E8D41E319F6B006AAD7A /* AdventureViewController.swift */; };
+		CA59E8D71E31B016006AAD7A /* dragification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59E8D61E31B016006AAD7A /* dragification.swift */; };
+		CA59E8D91E31BD44006AAD7A /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59E8D81E31BD44006AAD7A /* Artwork.swift */; };
+		CA59E8DB1E31BEA3006AAD7A /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59E8DA1E31BEA3006AAD7A /* VCMapView.swift */; };
+		CA8EB2BE1E29855900765852 /* drago.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA8EB2BD1E29855900765852 /* drago.jpg */; };
+		CA8EB2C01E29855F00765852 /* blu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA8EB2BF1E29855F00765852 /* blu.jpg */; };
+		CA8EB2C21E29871E00765852 /* search-1.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8EB2C11E29871E00765852 /* search-1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		30C01FE01E282DBA00C30BC7 /* SirHaxALotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SirHaxALotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C01FE41E282DBA00C30BC7 /* SirHaxALotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirHaxALotUITests.swift; sourceTree = "<group>"; };
 		30C01FE61E282DBA00C30BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857C60F71E3287EC00A07953 /* HackthonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackthonViewController.swift; sourceTree = "<group>"; };
+		CA59E8D21E319E67006AAD7A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CA59E8D41E319F6B006AAD7A /* AdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
+		CA59E8D61E31B016006AAD7A /* dragification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dragification.swift; sourceTree = "<group>"; };
+		CA59E8D81E31BD44006AAD7A /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		CA59E8DA1E31BEA3006AAD7A /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
+		CA8EB2BD1E29855900765852 /* drago.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drago.jpg; sourceTree = "<group>"; };
+		CA8EB2BF1E29855F00765852 /* blu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blu.jpg; sourceTree = "<group>"; };
+		CA8EB2C11E29871E00765852 /* search-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +118,17 @@
 			isa = PBXGroup;
 			children = (
 				30C01FC11E282DBA00C30BC7 /* AppDelegate.swift */,
+				CA8EB2BD1E29855900765852 /* drago.jpg */,
+				CA8EB2BF1E29855F00765852 /* blu.jpg */,
+				CA8EB2C11E29871E00765852 /* search-1.png */,
 				30C01FC31E282DBA00C30BC7 /* ViewController.swift */,
 				30C01FC51E282DBA00C30BC7 /* Main.storyboard */,
+				857C60F71E3287EC00A07953 /* HackthonViewController.swift */,
+				CA59E8D41E319F6B006AAD7A /* AdventureViewController.swift */,
+				CA59E8DA1E31BEA3006AAD7A /* VCMapView.swift */,
+				CA59E8D81E31BD44006AAD7A /* Artwork.swift */,
+				CA59E8D61E31B016006AAD7A /* dragification.swift */,
+				CA59E8D21E319E67006AAD7A /* HomeViewController.swift */,
 				30C01FCB1E282DBA00C30BC7 /* Assets.xcassets */,
 				30C01FCD1E282DBA00C30BC7 /* LaunchScreen.storyboard */,
 				30C01FD01E282DBA00C30BC7 /* Info.plist */,
@@ -196,7 +223,7 @@
 				TargetAttributes = {
 					30C01FBD1E282DBA00C30BC7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = SCP56JA353;
+						DevelopmentTeam = 7X2SRK4XXP;
 						ProvisioningStyle = Automatic;
 					};
 					30C01FD41E282DBA00C30BC7 = {
@@ -239,6 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C01FCF1E282DBA00C30BC7 /* LaunchScreen.storyboard in Resources */,
+				CA8EB2C21E29871E00765852 /* search-1.png in Resources */,
+				CA8EB2C01E29855F00765852 /* blu.jpg in Resources */,
+				CA8EB2BE1E29855900765852 /* drago.jpg in Resources */,
 				30C01FCC1E282DBA00C30BC7 /* Assets.xcassets in Resources */,
 				30C01FC71E282DBA00C30BC7 /* Main.storyboard in Resources */,
 			);
@@ -265,9 +295,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA59E8D71E31B016006AAD7A /* dragification.swift in Sources */,
 				30C01FC41E282DBA00C30BC7 /* ViewController.swift in Sources */,
+				CA59E8D91E31BD44006AAD7A /* Artwork.swift in Sources */,
 				30C01FC21E282DBA00C30BC7 /* AppDelegate.swift in Sources */,
+				CA59E8DB1E31BEA3006AAD7A /* VCMapView.swift in Sources */,
+				CA59E8D51E319F6B006AAD7A /* AdventureViewController.swift in Sources */,
+				857C60F81E3287EC00A07953 /* HackthonViewController.swift in Sources */,
 				30C01FCA1E282DBA00C30BC7 /* SirHaxALot.xcdatamodeld in Sources */,
+				CA59E8D31E319E67006AAD7A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,10 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SCP56JA353;
+				DEVELOPMENT_TEAM = 7X2SRK4XXP;
 				INFOPLIST_FILE = SirHaxALot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CodingDojo.SirHaxALot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevin.sirHaxxalot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -430,10 +466,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SCP56JA353;
+				DEVELOPMENT_TEAM = 7X2SRK4XXP;
 				INFOPLIST_FILE = SirHaxALot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CodingDojo.SirHaxALot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevin.sirHaxxalot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -516,6 +552,7 @@
 				30C01FEB1E282DBA00C30BC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30C01FEC1E282DBA00C30BC7 /* Build configuration list for PBXNativeTarget "SirHaxALotTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +561,7 @@
 				30C01FEE1E282DBA00C30BC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30C01FEF1E282DBA00C30BC7 /* Build configuration list for PBXNativeTarget "SirHaxALotUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +570,7 @@
 				30C01FF11E282DBA00C30BC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

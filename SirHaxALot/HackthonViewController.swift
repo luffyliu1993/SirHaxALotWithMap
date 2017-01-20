@@ -11,16 +11,15 @@ import CoreMotion
 import AVFoundation
 
 
-class ViewController: UIViewController {
-
+class HackthonViewController: UIViewController {
+    
     @IBOutlet weak var womboProgress: UIProgressView!
     @IBOutlet weak var gameMessage: UILabel!
     @IBOutlet weak var hpProgressView: UIProgressView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var white: UIImageView!
     
-    var delegate: AdventureViewController?
-    var dragitification:Dragification?
+    var delegate: UIViewController?
     
     var motionManager: CMMotionManager?
     var opQ = OperationQueue()
@@ -50,7 +49,7 @@ class ViewController: UIViewController {
     var curCommand:Int = 0
     var curFunction = ""
     var swingSpeed = 0.0
-
+    
     
     ////////////////////////////////////////////////////////////////////////
     //                                                                    //
@@ -131,7 +130,7 @@ class ViewController: UIViewController {
             print(error.description)
         }
     }
-
+    
     var swordMiss: AVAudioPlayer?
     var misses = ["swordMiss1","swordMiss2","swordMiss3"]
     
@@ -271,18 +270,6 @@ class ViewController: UIViewController {
         clearLog()
     }
     
-    func reset(){
-        self.drag = Double(totHP)
-        self.wombo = 0
-        self.womboProgress.setProgress(Float(self.wombo)/10, animated: true)
-        self.message = ""
-        self.gameMessage.text! = ""
-        self.hpProgressView.setProgress(Float(self.drag)/totHP, animated: false)
-        self.time = startTime
-        self.command = self.randoNum()
-        gameOver = false
-    }
-    
     func randoNum () -> Int {
         return Int(arc4random_uniform(3))
     }
@@ -296,7 +283,7 @@ class ViewController: UIViewController {
     
     
     
-
+    
     ////////////////////////////////////////////////////////////////////////
     //                                                                    //
     //      MODULARIZATION                                                //
@@ -376,7 +363,7 @@ class ViewController: UIViewController {
     
     func unsuccessfulChop(){
         print("++++++++++++++++++++++ Wrong... ++++++++++++++++++++++")
-//        playMiss()
+        //        playMiss()
         wombo = 0
     }
     
@@ -426,56 +413,64 @@ class ViewController: UIViewController {
     // MARK:     STOP CHOP                                                //
     //                                                                    //
     ////////////////////////////////////////////////////////////////////////
-
+    
     func stopChop(){
-//        if self.acceleration > -5.0 && chopping == true {
-//        if chopping == true{
-            chopping = false
-            //Check for left chop
-            if self.zGrav < -40 && self.zGrav > -57 {
-                if command == 2{
-                    curCommand = 2
-                    successfulChop()
-                    playLeftYelps()
-                    runDiagnostics(function: "stopChop(left)")
-                    willDierdreMove()
-                }else{
-                    unsuccessfulChop()
-                    runDiagnostics(function: "stopChop(unsuccessfull)")
-                }
-            }else if self.zGrav > 40 && self.zGrav < 57 {
-                //Check for right chop
-                if command == 0{
-                    curCommand = 0
-                    successfulChop()
-                    playRightYelps()
-                    runDiagnostics(function: "stopChop(right)")
-                    willDierdreMove()
-                    
-                }else{
-                    unsuccessfulChop()
-                    runDiagnostics(function: "stopChop(unsuccessful)")
-                }
-            }else if self.zGrav > -39 && self.zGrav < 39 {
-                //Check for center chop
-                if command == 1{
-                    curCommand = 1
-                    successfulChop()
-                    playCenterYelps()
-                    runDiagnostics(function: "stopChop(center)")
-                    willDierdreMove()
-                }else{
-                    unsuccessfulChop()
-                    runDiagnostics(function: "stopChop(unsuccessful)")
-                }
+        //        if self.acceleration > -5.0 && chopping == true {
+        //        if chopping == true{
+        chopping = false
+        //Check for left chop
+        if self.zGrav < -40 && self.zGrav > -57 {
+            if command == 2{
+                curCommand = 2
+                successfulChop()
+                playLeftYelps()
+                runDiagnostics(function: "stopChop(left)")
+                willDierdreMove()
+            }else{
+                unsuccessfulChop()
+                runDiagnostics(function: "stopChop(unsuccessfull)")
             }
-//        }
+        }else if self.zGrav > 40 && self.zGrav < 57 {
+            //Check for right chop
+            if command == 0{
+                curCommand = 0
+                successfulChop()
+                playRightYelps()
+                runDiagnostics(function: "stopChop(right)")
+                willDierdreMove()
+                
+            }else{
+                unsuccessfulChop()
+                runDiagnostics(function: "stopChop(unsuccessful)")
+            }
+        }else if self.zGrav > -39 && self.zGrav < 39 {
+            //Check for center chop
+            if command == 1{
+                curCommand = 1
+                successfulChop()
+                playCenterYelps()
+                runDiagnostics(function: "stopChop(center)")
+                willDierdreMove()
+            }else{
+                unsuccessfulChop()
+                runDiagnostics(function: "stopChop(unsuccessful)")
+            }
+        }
+        //        }
     }
-
-
-
-
+    
+    
+    
+    
     override func viewDidLoad() {
+        DispatchQueue.main.async {
+            print("WE ARE IN ADD OPERATION")
+            self.dragonFlap?.stop()
+            self.dragonFlap?.stop()
+            self.dragonFlap?.stop()
+            self.dragonFlap?.numberOfLoops = 0
+        }
+        
         super.viewDidLoad()
         self.time = startTime
         white.isHidden = true
@@ -491,11 +486,11 @@ class ViewController: UIViewController {
         self.hpProgressView.setProgress(Float(self.drag)/totHP, animated: false)
         var _ = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
-    ////////////////////////////////////////////////////////////////////////
-    //                                                                    //
-    //      MOTION MANAGER                                                //
-    //                                                                    //
-    ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+        //                                                                    //
+        //      MOTION MANAGER                                                //
+        //                                                                    //
+        ////////////////////////////////////////////////////////////////////////
         motionManager = CMMotionManager()
         if let manager = motionManager{
             print("Yes CMMotion")
@@ -503,8 +498,8 @@ class ViewController: UIViewController {
             manager.startDeviceMotionUpdates(to: queue, withHandler: {
                 (data, error)->Void in
                 manager.deviceMotionUpdateInterval = 0.03;
-//                print("Grav Z:", (Int((180/Double.pi)*data!.gravity.z)) , "Grav X:", (Int((180/Double.pi)*data!.gravity.x)) , "Grav Y:", (Int((180/Double.pi)*data!.gravity.y)));
-//                print("x-Accell: ", data!.userAcceleration.x)
+                //                print("Grav Z:", (Int((180/Double.pi)*data!.gravity.z)) , "Grav X:", (Int((180/Double.pi)*data!.gravity.x)) , "Grav Y:", (Int((180/Double.pi)*data!.gravity.y)));
+                //                print("x-Accell: ", data!.userAcceleration.x)
                 self.zGrav = Int((180/Double.pi)*data!.gravity.z)
                 self.acceleration = Double(data!.userAcceleration.x)
                 self.yacceleration = Double(data!.userAcceleration.y)
@@ -513,7 +508,7 @@ class ViewController: UIViewController {
                 
                 
                 //Start/stop chop
- 
+                
                 if self.acceleration < -5.0 && self.chopping == false && self.drag > 0 && self.time > 0{
                     self.curAccel = self.acceleration
                     self.chopChop()
@@ -537,11 +532,7 @@ class ViewController: UIViewController {
                         self.hpProgressView.setProgress(Float(self.drag)/self.totHP, animated: true)
                         print("hp",self.hpProgressView.progress)
                     }
-
-                }
-                if self.drag == 0.0{
-                    self.reset()
-                    self.delegate?.remove(dragification: self.dragitification!)
+                    
                 }
                 
             });
@@ -585,12 +576,12 @@ class ViewController: UIViewController {
     }
     
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
